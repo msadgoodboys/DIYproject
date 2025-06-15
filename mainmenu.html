@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Main Menu - Craftopia</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Main Menu</h1>
+    <img class="logo" src="img/logo.png" alt="Craftopia Logo" />
+    <p>Welcome to the main menu of Craftopia!</p>
+
+    <button id="logout-button">LOG OUT</button>
+  </div>
+
+  <script type="module">
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+
+    const supabase = createClient(
+      'https://ielcfgdvxyldviqqantu.supabase.co',
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImllbGNmZ2R2eHlsZHZpcXFhbnR1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAwMTg2NzMsImV4cCI6MjA2NTU5NDY3M30.gcgDJHjOq_dYdrxIPgQ_gaTVIgN5BPYyI0B7YRqNvSA'
+    );
+
+    document.getElementById("logout-button").addEventListener("click", async () => {
+      await supabase.auth.signOut();
+      alert("You have been logged out.");
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>

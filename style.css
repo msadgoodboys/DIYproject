@@ -1,0 +1,99 @@
+/* Reset & base styling */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  font-family: 'Kumbh Sans', sans-serif;
+}
+html, body {
+  margin: 0;
+  height: 100%;
+  background-color: #ffedcc;
+}
+
+/* Centering the card container */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Main login card */
+.container {
+  background-color: #fff4e6;
+  padding: 40px 60px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  width: 420px;
+  text-align: center;
+}
+
+/* Header text with shadow bubble */
+h1 {
+  background: linear-gradient(to right, #f8c6cd, #f8c6cd);
+  padding: 10px 20px;
+  border-radius: 30px;
+  display: inline-block;
+  font-family: 'Lilita One', cursive;
+  font-size: 28px;
+  color: #d66a84;
+  text-shadow: 2px 2px #f8dede;
+  margin-bottom: 20px;
+}
+
+/* Logo styling */
+.logo {
+  width: 150px;
+  margin: 10px auto 30px auto;
+}
+
+/* Input fields */
+label {
+  display: block;
+  text-align: left;
+  font-size: 16px;
+  margin-bottom: 6px;
+  margin-top: 12px;
+  color: #333;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 18px;
+  font-size: 16px;
+  border: 1px solid #aaa;
+  border-radius: 20px;
+  background: linear-gradient(to right, #f0a6a6, #f9c2f9);
+  outline: none;
+  margin-bottom: 10px;
+}
+
+/* Login button */
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 16px;
+  font-size: 16px;
+  border-radius: 20px;
+  background: linear-gradient(to right, #f8b9cc, #fcd7f9);
+  border: 1px solid #999;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+button:hover {
+  background: linear-gradient(to right, #f597b0, #f9aef9);
+}
+
+/* Links below button */
+p {
+  font-size: 14px;
+  margin-top: 10px;
+}
+a {
+  color: #004cf1;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}

@@ -20,7 +20,7 @@ document.getElementById("reset-button").addEventListener("click", async (e) => {
 
   // Send password reset email
   const { data, error } = await supabase.auth.resetPasswordForEmail(email, {
-  redirectTo: 'http://127.0.0.1:5500/updatepassword/updatepassword.html'
+  redirectTo: 'http://127.0.0.1:5500../updatepassword/updatepassword.html'
 });
 
   if (error) {

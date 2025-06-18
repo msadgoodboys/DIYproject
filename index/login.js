@@ -21,6 +21,6 @@ document.getElementById("login-button").addEventListener("click", async (e) => {
     alert("Login failed: " + error.message);
   } else {
     alert("Login successful! ✅");
-    window.location.href = "mainmenu.html";
+    window.location.href = "../mainmenu/mainmenu.html";
   }
 });

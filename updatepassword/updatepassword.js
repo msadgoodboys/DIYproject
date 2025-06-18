@@ -5,27 +5,24 @@ const supabase = createClient(
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImllbGNmZ2R2eHlsZHZpcXFhbnR1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAwMTg2NzMsImV4cCI6MjA2NTU5NDY3M30.gcgDJHjOq_dYdrxIPgQ_gaTVIgN5BPYyI0B7YRqNvSA'
 );
 
-// First, wait for Supabase to detect the auth token from URL hash
-supabase.auth.onAuthStateChange(async (event, session) => {
-  if (event === 'PASSWORD_RECOVERY') {
-    document.getElementById("update-button").addEventListener("click", async () => {
-      const newPassword = document.getElementById("new-password").value;
+await supabase.auth.getSessionFromUrl();
 
-      if (!newPassword) {
-        alert("Please enter your new password.");
-        return;
-      }
+document.getElementById("update-button").addEventListener("click", async () => {
+  const newPassword = document.getElementById("new-password").value;
 
-      const { data, error } = await supabase.auth.updateUser({
-        password: newPassword
-      });
+  if (!newPassword) {
+    alert("Please enter your new password.");
+    return;
+  }
 
-      if (error) {
-        alert("❌ Failed to update password: " + error.message);
-      } else {
-        alert("✅ Password updated successfully!");
-        window.location.href = "../index/index.html";
-      }
-    });
+  const { data, error } = await supabase.auth.updateUser({
+    password: newPassword
+  });
+
+  if (error) {
+    alert("❌ Failed to update password: " + error.message);
+  } else {
+    alert("✅ Password updated successfully!");
+    window.location.href = "../index/index.html";
   }
 });

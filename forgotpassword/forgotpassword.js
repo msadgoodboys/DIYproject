@@ -12,16 +12,14 @@ document.getElementById("reset-button").addEventListener("click", async (e) => {
 
   const email = document.getElementById("email").value;
 
-  // Validate email input
   if (!email) {
     alert("Please enter your email address.");
     return;
   }
 
-  // Send password reset email
   const { data, error } = await supabase.auth.resetPasswordForEmail(email, {
-  redirectTo: 'http://127.0.0.1:5500/DIYproject-main/updatepassword/updatepassword.html#'
-});
+    redirectTo: 'http://127.0.0.1:5500/DIYproject-main/updatepassword/updatepassword.html'
+  });
 
   if (error) {
     alert("❌ Failed to send reset link: " + error.message);
